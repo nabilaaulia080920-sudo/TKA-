@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKA MasterClass - Belajar dengan Strategi</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-content { display: none; }
+        .page-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav class="bg-indigo-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- LOGO -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="bukaHalaman('beranda')">
+                <div class="bg-yellow-400 p-2 rounded-xl flex items-center justify-center shadow-inner">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-indigo-900 animate-bounce"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-black text-xl tracking-wider leading-none">TKA <span class="text-yellow-400">MasterClass</span></span>
+                    <span class="text-[10px] text-indigo-200 tracking-normal normal-case font-medium mt-0.5">Belajar dengan Strategi bukan sekedar materi</span>
+                </div>
+            </div>
+            
+            <!-- MENU NAVIGASI -->
+            <div class="hidden md:flex space-x-6 font-medium items-center">
+                <button onclick="bukaHalaman('beranda')" class="nav-link hover:text-yellow-400 transition cursor-pointer">Beranda</button>
+                <button onclick="bukaHalaman('tutor')" class="nav-link hover:text-yellow-400 transition cursor-pointer">Tutor</button>
+                <button onclick="bukaHalaman('paket')" class="nav-link hover:text-yellow-400 transition cursor-pointer">Paket Belajar</button>
+                <button onclick="bukaHalaman('video')" class="nav-link hover:text-yellow-400 transition cursor-pointer text-yellow-300 font-bold"><i class="fa-solid fa-circle-play mr-1"></i> Video Belajar</button>
+                <button onclick="bukaHalaman('layanan')" class="nav-link hover:text-yellow-400 transition cursor-pointer">Layanan Unggulan</button>
+                <button onclick="bukaHalaman('kontak-page')" class="nav-link hover:text-yellow-400 transition cursor-pointer">Hubungi Kami</button>
+                
+                <!-- FITUR LOGIN DI NAVBAR -->
+                <button onclick="bukaModalLogin()" class="bg-yellow-400 text-indigo-950 font-bold px-4 py-2 rounded-xl text-xs hover:bg-yellow-300 transition shadow-md cursor-pointer flex items-center space-x-1.5">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Login Akun</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER (MULTI-PAGE) -->
+    <main class="flex-grow">
+
+        <!-- HALAMAN 1: BERANDA -->
+        <section id="page-beranda" class="page-content active">
+            <!-- HERO BACKGROUND -->
+            <div class="relative bg-indigo-950 text-white py-36 px-4 overflow-hidden">
+                <div class="absolute inset-0 opacity-25 bg-cover bg-center mix-blend-overlay" 
+                     style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1920');">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/60 via-indigo-950/90 to-indigo-950"></div>
+
+                <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+                    <!-- LOGIN DI ATAS BANNER BERANDA -->
+                    <div class="bg-indigo-900/80 backdrop-blur-sm border border-indigo-700/50 rounded-2xl p-4 mb-8 max-w-md w-full shadow-xl flex items-center justify-between">
+                        <div class="flex items-center space-x-3 text-left">
+                            <i class="fa-solid fa-user-shield text-yellow-400 text-xl"></i>
+                            <div>
+                                <h4 class="text-xs font-bold">Sudah Terdaftar Jadi Siswa?</h4>
+                                <p class="text-[10px] text-indigo-200">Akses modul, video premium & tryout.</p>
+                            </div>
+                        </div>
+                        <button onclick="bukaModalLogin()" class="bg-white text-indigo-900 font-bold px-4 py-2 rounded-xl text-xs hover:bg-indigo-100 transition shadow cursor-pointer">
+                            Masuk Sini
+                        </button>
+                    </div>
+
+                    <span class="bg-yellow-400 text-indigo-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pusat Strategi Belajar</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold mt-4 mb-6 leading-tight">
+                        <span class="text-yellow-400 underline decoration-wavy">TKA MasterClass</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-indigo-200 mb-8 max-w-2xl mx-auto">
+                        Dirancang khusus untuk siswa-siswi SMP, SMA, dan SMK demi menembus ujian impian secara taktis dan terukur.
+                    </p>
+                    <button onclick="bukaHalaman('paket')" class="bg-yellow-400 text-indigo-950 font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-yellow-300 transition transform hover:-translate-y-1 inline-block cursor-pointer">
+                        Lihat Pilihan Paket Belajar <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Core Values Filosofi -->
+            <div class="bg-gradient-to-r from-indigo-900 to-indigo-950 text-white py-16 px-4 shadow-inner">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-10">
+                        <span class="text-yellow-400 font-bold tracking-widest text-xs uppercase">Core Values</span>
+                        <h2 class="text-3xl font-extrabold mt-1">Filosofi Belajar Kami</h2>
+                        <div class="h-1 w-20 bg-yellow-400 mx-auto mt-3 rounded-full"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-yellow-300">"Pola Jauh Lebih Penting daripada Rumus Mati"</h3>
+                            <p class="text-indigo-200 text-sm leading-relaxed text-justify">
+                                Di TKA MasterClass, kami believe tumpukan hafalan tanpa arah hanya menciptakan kejenuhan berpikir saat ujian. Setiap soal memiliki pola dasar bawaan struktur pembuatnya. 
+                            </p>
+                            <p class="text-indigo-200 text-sm leading-relaxed text-justify">
+                                Tugas utama kami bukan menjejalkan ribuan lembar rumus, melainkan mengasah ketajaman logika, taktik eliminasi, serta membangun mentalitas juara yang responsif bagi siswa tingkat SMP, SMA, maupun SMK.
+                            </p>
+                        </div>
+                        <div class="bg-indigo-800/40 p-6 rounded-2xl border border-indigo-700/50 space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-graduation-cap text-yellow-400 text-xl mt-1"></i>
+                                <p class="text-xs text-indigo-100"><strong class="text-white block">Adil & Merata</strong> Melayani kebutuhan kurikulum adaptif dari tingkat dasar SMP hingga persiapan kerja/kuliah siswa SMA/SMK.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-scale-balanced text-yellow-400 text-xl mt-1"></i>
+                                <p class="text-xs text-indigo-100"><strong class="text-white block">Efisiensi Maksimal</strong> Mempersingkat waktu pengerjaan soal rumit tanpa mengurangi keakuratan hasil jawaban akhir.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-heart text-yellow-400 text-xl mt-1"></i>
+                                <p class="text-xs text-indigo-100"><strong class="text-white block">Sinergi Psikologis</strong> Memadukan kesiapan akademis anak dengan keterbukaan komunikasi bersama orang tua.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karakteristik & USP -->
+            <div class="max-w-7xl mx-auto py-16 px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <i class="fa-solid fa-brain text-indigo-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Strategi Over Hafalan</h3>
+                        <p class="text-gray-600 text-sm">Bukan sekadar menghafal rumus mati, tapi memahami logika dan pola jebakan soal secara taktis.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <i class="fa-solid fa-users-gear text-indigo-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Pendampingan Holistik</h3>
+                        <p class="text-gray-600 text-sm">Menyelaraskan minat, bakat, restu orang tua, hingga strategi pemilihan jurusan yang realistis.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <i class="fa-solid fa-bolt text-indigo-600 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Ekosistem Responsif</h3>
+                        <p class="text-gray-600 text-sm">Grup belajar interaktif dengan respons super cepat agar kendala belajarmu selesai hari itu juga.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimoni -->
+            <div class="bg-gray-100 py-16 px-4 shadow-inner">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-12">
+                        <span class="text-indigo-600 font-bold tracking-widest text-xs uppercase">Bukti Nyata</span>
+                        <h2 class="text-3xl font-bold text-gray-900">Cerita Sukses Alumni Kami</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                        <!-- Testi 1 -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <div class="flex text-amber-400 space-x-0.5 mb-3 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <p class="text-gray-600 text-xs italic leading-relaxed">"Trik eliminasi jawaban dari para mentor bener-bener penyelamat waktu pas UTBK kemarin!"</p>
+                            </div>
+                            <div class="flex items-center space-x-3 border-t pt-3 mt-4">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Siswa 1" class="w-10 h-10 rounded-full object-cover">
+                                <div><h5 class="font-bold text-xs text-gray-900">Rania Putri</h5><p class="text-[10px] text-indigo-600 font-semibold">Alumni SMA</p></div>
+                            </div>
+                        </div>
+                        <!-- Testi 2 -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <div class="flex text-amber-400 space-x-0.5 mb-3 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <p class="text-gray-600 text-xs italic leading-relaxed">"Sebagai anak SMK yang minim materi teori murni, cara ngajar di sini gampang dicerna."</p>
+                            </div>
+                            <div class="flex items-center space-x-3 border-t pt-3 mt-4">
+                                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=150" alt="Siswa 2" class="w-10 h-10 rounded-full object-cover">
+                                <div><h5 class="font-bold text-xs text-gray-900">Dimas Pratama</h5><p class="text-[10px] text-indigo-600 font-semibold">Alumni SMK</p></div>
+                            </div>
+                        </div>
+                        <!-- Testi 3 -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <div class="flex text-amber-400 space-x-0.5 mb-3 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <p class="text-gray-600 text-xs italic leading-relaxed">"Belajar bahasa Inggris jadi seru banget bareng MasterClass. Nyari main idea jadi gampang!"</p>
+                            </div>
+                            <div class="flex items-center space-x-3 border-t pt-3 mt-4">
+                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150" alt="Siswa 3" class="w-10 h-10 rounded-full object-cover">
+                                <div><h5 class="font-bold text-xs text-gray-900">Siti Aisyah</h5><p class="text-[10px] text-indigo-600 font-semibold">Siswa SMA</p></div>
+                            </div>
+                        </div>
+                        <!-- Testi 4 -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <div class="flex text-amber-400 space-x-0.5 mb-3 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <p class="text-gray-600 text-xs italic leading-relaxed">"Setelah sesi konseling bareng ortu dan tim mentor, masa depan kami jadi terarah cerah."</p>
+                            </div>
+                            <div class="flex items-center space-x-3 border-t pt-3 mt-4">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Siswa 4" class="w-10 h-10 rounded-full object-cover">
+                                <div><h5 class="font-bold text-xs text-gray-900">Bagus Wijaya</h5><p class="text-[10px] text-indigo-600 font-semibold">Siswa SMA</p></div>
+                            </div>
+                        </div>
+                        <!-- Testi 5 -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <div class="flex text-amber-400 space-x-0.5 mb-3 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <p class="text-gray-600 text-xs italic leading-relaxed">"Aku yang masih kelas 9 SMP terbantu banget persiapan masuk SMA unggulan pake modul ringkas di sini."</p>
+                            </div>
+                            <div class="flex items-center space-x-3 border-t pt-3 mt-4">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Siswa 5" class="w-10 h-10 rounded-full object-cover">
+                                <div><h5 class="font-bold text-xs text-gray-900">Amelia Putri</h5><p class="text-[10px] text-indigo-600 font-semibold">Siswa SMP</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 2: TUTOR (DIPERBARUI MENJADI 6 MENTOR & FOTO PORTRAIT) -->
+        <section id="page-tutor" class="page-content py-16 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Kenali Mentor Hebatmu</h2>
+                <p class="text-gray-600 mt-2">6 Pengajar Profesional yang Siap Mengubah Cara Belajarmu</p>
+            </div>
+            <!-- Grid disesuaikan menjadi 2 kolom pada mobile, 3 pada tablet, dan 6 pada layar besar -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                
+                <!-- Mentor 1 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-center flex flex-col">
+                    <div class="w-full aspect-[3/4] bg-indigo-900 flex items-center justify-center relative overflow-hidden group">
+                        <!-- Placeholder SVG/Icon jika gambar belum ada, ganti tag <i> ini dengan <img class="w-full h-full object-cover" src="link_foto.jpg"> jika sudah ada berkas fotonya -->
+                        <i class="fa-solid fa-user-tie text-5xl text-indigo-200/50"></i>
+                    </div>
+                    <div class="p-4 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-sm text-gray-900 leading-snug">Tasya Febri Aulia Situmorang</h4>
+                        <p class="text-[11px] text-indigo-600 font-semibold mt-1">Master Mentor</p>
+                    </div>
+                </div>
+
+                <!-- Mentor 2 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-center flex flex-col">
+                    <div class="w-full aspect-[3/4] bg-indigo-900 flex items-center justify-center relative overflow-hidden group">
+                        <img src="c:\Users\ACER\Downloads\FAJAR.jpeg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-sm text-gray-900 leading-snug">Nabila Aulia Sihombing</h4>
+                        <p class="text-[11px] text-indigo-600 font-semibold mt-1">Master Mentor</p>
+                    </div>
+                </div>
+
+                <!-- Mentor 3 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-center flex flex-col">
+                    <div class="w-full aspect-[3/4] bg-emerald-900 flex items-center justify-center relative overflow-hidden group">
+                        <i class="fa-solid fa-user-tie text-5xl text-emerald-200/50"></i>
+                    </div>
+                    <div class="p-4 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-sm text-gray-900 leading-snug">Windi Nurmalita</h4>
+                        <p class="text-[11px] text-indigo-600 font-semibold mt-1">Master Mentor</p>
+                    </div>
+                </div>
+
+                <!-- Mentor 4 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-center flex flex-col">
+                    <div class="w-full aspect-[3/4] bg-amber-900 flex items-center justify-center relative overflow-hidden group">
+                        <i class="fa-solid fa-user-tie text-5xl text-amber-200/50"></i>
+                    </div>
+                    <div class="p-4 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-sm text-gray-900 leading-snug">Tasya Salsabila</h4>
+                        <p class="text-[11px] text-indigo-600 font-semibold mt-1">Master Mentor</p>
+                    </div>
+                </div>
+
+                <!-- Mentor 5 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-center flex flex-col">
+                    <div class="w-full aspect-[3/4] bg-purple-900 flex items-center justify-center relative overflow-hidden group">
+                        <i class="fa-solid fa-user-tie text-5xl text-purple-200/50"></i>
+                    </div>
+                    <div class="p-4 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-sm text-gray-900 leading-snug">Nailah Tsabitah</h4>
+                        <p class="text-[11px] text-indigo-600 font-semibold mt-1">Master Mentor</p>
+                    </div>
+                </div>
+
+                <!-- Mentor 6 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-center flex flex-col">
+                    <div class="w-full aspect-[3/4] bg-sky-900 flex items-center justify-center relative overflow-hidden group">
+                        <i class="fa-solid fa-user-tie text-5xl text-sky-200/50"></i>
+                    </div>
+                    <div class="p-4 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-sm text-gray-900 leading-snug">Fajar Gemilang</h4>
+                        <p class="text-[11px] text-indigo-600 font-semibold mt-1">Master Mentor</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HALAMAN 3: PAKET BELAJAR -->
+        <section id="page-paket" class="page-content bg-indigo-50/50 py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Pilihan Paket Belajar Terbaik</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch">
+                    <!-- Paket Basic -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Paket Basic</h3>
+                            <div class="my-3"><span class="text-xl font-black text-indigo-900">Rp 149.000</span></div>
+                            <ul class="text-xs text-gray-600 space-y-2 border-t pt-3">
+                                <li><i class="fa-solid fa-check text-green-500"></i> Video pembelajaran</li>
+                                <li><i class="fa-solid fa-check text-green-500"></i> Latihan soal + pembahasan</li>
+                                <li><i class="fa-solid fa-check text-green-500"></i> 1x Try Out</li>
+                                <li class="text-indigo-600 font-medium"><i class="fa-solid fa-clock"></i> Akses 1 Bulan</li>
+                            </ul>
+                        </div>
+                        <button onclick="bukaPembayaran('Paket Basic', 149000)" class="w-full mt-6 bg-indigo-900 text-white text-sm font-semibold py-2 rounded-xl hover:bg-indigo-800 transition cursor-pointer">Pilih Paket</button>
+                    </div>
+                    <!-- Paket Plus -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-indigo-300 ring-2 ring-indigo-600/10 flex flex-col justify-between relative">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Paket Plus</h3>
+                            <div class="my-3"><span class="text-xl font-black text-indigo-900">Rp 299.000</span></div>
+                            <ul class="text-xs text-gray-600 space-y-2 border-t pt-3">
+                                <li class="font-bold text-indigo-600"><i class="fa-solid fa-plus text-indigo-600"></i> Semua fitur Basic</li>
+                                <li><i class="fa-solid fa-check text-green-500"></i> 2-3x Try Out</li>
+                                <li class="text-indigo-600 font-medium"><i class="fa-solid fa-clock"></i> Akses 2 Bulan</li>
+                            </ul>
+                        </div>
+                        <button onclick="bukaPembayaran('Paket Plus', 299000)" class="w-full mt-6 bg-indigo-600 text-white text-sm font-semibold py-2 rounded-xl hover:bg-indigo-700 transition cursor-pointer">Pilih Paket</button>
+                    </div>
+                    <!-- Paket Pro -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Paket Pro</h3>
+                            <div class="my-3"><span class="text-xl font-black text-indigo-900">Rp 499.000</span></div>
+                            <ul class="text-xs text-gray-600 space-y-2 border-t pt-3">
+                                <li class="font-bold text-indigo-600"><i class="fa-solid fa-plus text-indigo-600"></i> Semua fitur Plus</li>
+                                <li><i class="fa-solid fa-check text-green-500"></i> 4-5x Try Out</li>
+                                <li class="text-indigo-600 font-medium"><i class="fa-solid fa-clock"></i> Akses 3 Bulan</li>
+                            </ul>
+                        </div>
+                        <button onclick="bukaPembayaran('Paket Pro', 499000)" class="w-full mt-6 bg-indigo-900 text-white text-sm font-semibold py-2 rounded-xl hover:bg-indigo-800 transition cursor-pointer">Pilih Paket</button>
+                    </div>
+                    <!-- Paket Max -->
+                    <div class="bg-amber-50 p-6 rounded-2xl shadow-sm border border-amber-300 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-amber-950">Paket Max</h3>
+                            <div class="my-3"><span class="text-xl font-black text-amber-950">Rp 799.000</span></div>
+                            <ul class="text-xs text-amber-900 space-y-2 border-t border-amber-200 pt-3">
+                                <li class="font-bold text-amber-700"><i class="fa-solid fa-plus"></i> Semua fitur Pro</li>
+                                <li><i class="fa-solid fa-check text-green-600"></i> Strategi khusus soal</li>
+                                <li class="text-amber-700 font-medium"><i class="fa-solid fa-clock"></i> Akses 4 Bulan</li>
+                            </ul>
+                        </div>
+                        <button onclick="bukaPembayaran('Paket Max', 799000)" class="w-full mt-6 bg-amber-500 text-white text-sm font-bold py-2 rounded-xl hover:bg-amber-600 transition cursor-pointer">Pilih Paket</button>
+                    </div>
+                    <!-- Paket Intensif -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Intensif Singkat</h3>
+                            <div class="my-3"><span class="text-xl font-black text-indigo-900">Rp 249.000</span></div>
+                            <ul class="text-xs text-gray-600 space-y-2 border-t pt-3">
+                                <li><i class="fa-solid fa-bolt text-yellow-500"></i> Program cepat boost nilai</li>
+                                <li class="text-red-500 font-medium"><i class="fa-solid fa-clock"></i> Durasi ± 2 minggu</li>
+                            </ul>
+                        </div>
+                        <button onclick="bukaPembayaran('Paket Intensif', 249000)" class="w-full mt-6 bg-indigo-900 text-white text-sm font-semibold py-2 rounded-xl hover:bg-indigo-800 transition cursor-pointer">Pilih Paket</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 4: VIDEO PEMBELAJARAN -->
+        <section id="page-video" class="page-content py-16 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900"><i class="fa-solid fa-circle-play text-indigo-600"></i> Ruang Video Pembelajaran</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <div class="relative bg-slate-900 aspect-video flex items-center justify-center text-white group cursor-pointer">
+                        <i class="fa-solid fa-play text-4xl text-white/80 group-hover:text-yellow-400 transition"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold text-indigo-600 tracking-wide uppercase">Penalaran Kuantitatif</span>
+                        <h4 class="font-bold text-lg text-gray-900 mt-1">Trik Eliminasi Jawaban Soal Aljabar Kompleks</h4>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <div class="relative bg-slate-900 aspect-video flex items-center justify-center text-white group cursor-pointer">
+                        <i class="fa-solid fa-play text-4xl text-white/80 group-hover:text-yellow-400 transition"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold text-pink-600 tracking-wide uppercase">Bahasa Inggris</span>
+                        <h4 class="font-bold text-lg text-gray-900 mt-1">Membaca Cepat Main Idea Tanpa Kamus</h4>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <div class="relative bg-slate-900 aspect-video flex items-center justify-center text-white group cursor-pointer">
+                        <i class="fa-solid fa-play text-4xl text-white/80 group-hover:text-yellow-400 transition"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold text-yellow-600 tracking-wide uppercase">Penalaran Umum</span>
+                        <h4 class="font-bold text-lg text-gray-900 mt-1">Strategi Pola Angka Berulang & Deret Gambar</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 5: LAYANAN UNGGULAN -->
+        <section id="page-layanan" class="page-content bg-gradient-to-b from-white to-indigo-50 py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Premium Services</span>
+                    <h2 class="text-4xl font-black text-indigo-950 mt-3">Layanan Tambahan Akademik</h2>
+                    <p class="text-gray-600 mt-2 max-w-xl mx-auto">Fasilitas eksklusif non-materi untuk memetakan masa depan studi siswa secara terarah dan terukur.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 shadow-md">
+                                <i class="fa-solid fa-puzzle-piece"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Saran Jurusan Sesuai Hobi</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed text-justify">Membantu siswa mengenali potensi tersembunyi lewat rangkaian tes psikologi minat bakat, menyelaraskan kesenangan personal dengan opsi program studi masa kini.</p>
+                        </div>
+                        <div class="mt-6 border-t pt-4 text-xs font-semibold text-indigo-600 flex items-center space-x-1 cursor-pointer"><span>Pelajari Alur Tes</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 text-2xl mb-6 group-hover:bg-pink-600 group-hover:text-white transition duration-300 shadow-md">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Konseling Bersama Orang Tua</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed text-justify">Menjembatani komunikasi akademis antara ambisi siswa dengan ekspektasi realistis orang tua agar tercipta satu visi dukungan yang harmonis menjelang ujian.</p>
+                        </div>
+                        <div class="mt-6 border-t pt-4 text-xs font-semibold text-pink-600 flex items-center space-x-1 cursor-pointer"><span>Jadwalkan Pertemuan</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-md">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Layanan Info Beasiswa</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed text-justify">Pusat pembaruan data berkala mengenai program pembiayaan pendidikan dalam dan luar negeri, lengkap dengan teknik penyusunan esai/berkas administrasi.</p>
+                        </div>
+                        <div class="mt-6 border-t pt-4 text-xs font-semibold text-amber-600 flex items-center space-x-1 cursor-pointer"><span>Lihat Daftar Beasiswa</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 6: HUBUNGI KAMI -->
+        <section id="page-kontak-page" class="page-content py-20 px-4 bg-gray-900 text-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-yellow-400 font-bold tracking-widest text-xs uppercase block mb-2">Get In Touch</span>
+                <h2 class="text-4xl font-extrabold mb-4">Hubungi Kanal Resmi Kami</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto mb-12">Punya pertanyaan seputar program kelas atau ingin berkonsultasi? Terhubung langsung dengan tim Customer Care TKA MasterClass melalui media sosial di bawah ini.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                    <a href="https://wa.me/6283117555855" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 transition transform hover:-translate-y-1 shadow-lg group">
+                        <i class="fa-brands fa-whatsapp text-4xl group-hover:scale-110 transition"></i>
+                        <span class="font-bold text-base">WhatsApp Resmi</span>
+                        <span class="text-xs text-emerald-100 opacity-80">0831-1755-5855</span>
+                    </a>
+                    
+                    <a href="https://instagram.com" target="_blank" class="bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600 hover:opacity-90 text-white p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 transition transform hover:-translate-y-1 shadow-lg group">
+                        <i class="fa-brands fa-instagram text-4xl group-hover:scale-110 transition"></i>
+                        <span class="font-bold text-base">Instagram</span>
+                        <span class="text-xs text-pink-100 opacity-80">@tka.masterclass</span>
+                    </a>
+
+                    <a href="https://tiktok.com" target="_blank" class="bg-black border border-gray-800 hover:bg-gray-950 text-white p-6 rounded-2xl flex flex-col items-center justify-center space-y-3 transition transform hover:-translate-y-1 shadow-lg group">
+                        <i class="fa-brands fa-tiktok text-4xl group-hover:scale-110 transition"></i>
+                        <span class="font-bold text-base">TikTok</span>
+                        <span class="text-xs text-gray-400 opacity-80">@tka.masterclass</span>
+                    </a>
+                </div>
+                
+                <p class="text-xs text-gray-500 mt-12"><i class="fa-solid fa-clock mr-1"></i> Jam Operasional Respons Cepat: Setiap Hari (08.00 - 20.00 WIB)</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL PEMBAYARAN INTERAKTIF -->
+    <div id="modalPembayaran" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl relative">
+            <div class="bg-indigo-900 text-white p-5">
+                <button onclick="tutupPembayaran()" class="absolute top-4 right-4 text-white/80 text-2xl cursor-pointer">&times;</button>
+                <h3 class="text-lg font-bold">Formulir Checkout Paket</h3>
+            </div>
+            <div class="p-6 space-y-4 max-h-[70vh] overflow-y-auto">
+                <div class="bg-indigo-50 p-4 rounded-xl flex justify-between items-center text-sm">
+                    <div>
+                        <span class="text-xs text-gray-400 font-bold uppercase">Paket</span>
+                        <h4 id="namaPaketModal" class="font-bold text-indigo-950">Nama Paket</h4>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-gray-400 font-bold uppercase">Harga</span>
+                        <h4 id="hargaDasarModal" class="font-black text-indigo-950">Rp 0</h4>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-2">Diskon / Promo:</label>
+                    <div class="space-y-1.5 text-xs">
+                        <label class="flex items-center p-2 border rounded-lg cursor-pointer"><input type="radio" name="diskon" value="0" checked onclick="hitungTotal()"><span class="ml-2">Normal</span></label>
+                        <label class="flex items-center p-2 border rounded-lg cursor-pointer"><input type="radio" name="diskon" value="50000" onclick="hitungTotal()"><span class="ml-2 text-green-600 font-semibold">Paket Berdua (-Rp 50.000)</span></label>
+                        <label class="flex items-center p-2 border rounded-lg cursor-pointer"><input type="radio" name="diskon" value="75000" onclick="hitungTotal()"><span class="ml-2 text-green-600 font-semibold">Grup 3-5 Orang (-Rp 75.000)</span></label>
+                        <label class="flex items-center p-2 border rounded-lg cursor-pointer"><input type="radio" name="diskon" value="100000" onclick="hitungTotal()"><span class="ml-2 text-green-600 font-semibold">Grup 6+ Orang (-Rp 100.000)</span></label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1.5">Skema & Program Bayar:</label>
+                    <select id="skemaBayar" class="w-full text-xs p-2 border rounded-lg bg-white mb-2">
+                        <option value="Full">Full (Lunas)</option>
+                        <option value="Cicilan">Cicilan / Bertahap</option>
+                        <option value="Per Program">Bayar Per Program</option>
+                        <option value="Trial Class">Trial Class (Uji Coba)</option>
+                    </select>
+                    <div class="grid grid-cols-4 gap-2 text-[10px] font-bold text-center">
+                        <label class="border p-2 rounded-lg cursor-pointer"><input type="radio" name="metode" value="BRI" checked><br>Bank BRI</label>
+                        <label class="border p-2 rounded-lg cursor-pointer"><input type="radio" name="metode" value="Dana/SeaBank"><br>Dana</label>
+                        <label class="border p-2 rounded-lg cursor-pointer"><input type="radio" name="metode" value="QRIS"><br>QRIS</label>
+                        <label class="border p-2 rounded-lg cursor-pointer bg-yellow-50 border-yellow-300"><input type="radio" name="metode" value="Cash"><br><i class="fa-solid fa-money-bill-wave text-green-600"></i> Cash</label>
+                    </div>
+                </div>
+                <div class="border-t pt-3 flex justify-between items-center">
+                    <span class="text-sm font-bold">Total Pilihan:</span>
+                    <span id="grandTotalModal" class="text-xl font-black text-green-600">Rp 0</span>
+                </div>
+                <button onclick="prosesBayar()" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm cursor-pointer">Konfirmasi Pembayaran</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL LOGIN INTERAKTIF -->
+    <div id="modalLogin" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl relative p-6">
+            <button onclick="tutupModalLogin()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl cursor-pointer">&times;</button>
+            
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-900 rounded-full flex items-center justify-center mx-auto text-xl mb-2">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Login Siswa</h3>
+                <p class="text-xs text-gray-500">Masuk untuk melihat materi & perkembangan kelas</p>
+            </div>
+
+            <form onsubmit="simulasiLogin(event)" class="space-y-3">
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-700 mb-1">Nomor Induk Siswa / Email</label>
+                    <input type="text" required placeholder="Masukkan NIS Anda" class="w-full text-xs p-2.5 border rounded-xl focus:outline-indigo-600">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-700 mb-1">Kata Sandi</label>
+                    <input type="password" required placeholder="••••••••" class="w-full text-xs p-2.5 border rounded-xl focus:outline-indigo-600">
+                </div>
+                <div class="text-right">
+                    <a href="#" class="text-[10px] text-indigo-600 hover:underline">Lupa password?</a>
+                </div>
+                <button type="submit" class="w-full bg-indigo-900 text-white text-xs font-bold py-3 rounded-xl hover:bg-indigo-800 transition cursor-pointer mt-2">Masuk Ruang Belajar</button>
+                
+                <div class="mt-5 pt-4 border-t border-gray-100 bg-indigo-50/50 p-3 rounded-xl">
+                    <h5 class="text-[11px] font-bold text-indigo-950 flex items-center gap-1 mb-1">
+                        <i class="fa-solid fa-lightbulb text-yellow-500"></i> Filosofi Belajar Kami
+                    </h5>
+                    <p class="text-[10px] text-gray-600 leading-relaxed text-justify">
+                        Kami believe tumpukan hafalan tanpa arah hanya menciptakan kejenuhan berpikir. Tugas utama kami bukan menjejalkan rumus mati, melainkan mengasah ketajaman logika, taktik eliminasi, serta membangun mentalitas juara yang responsif.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-indigo-950 text-white py-6 px-4 text-center text-xs text-indigo-400 border-t border-indigo-900">
+        <div>&copy; 2026 TKA MasterClass. Hak Cipta Dilindungi.</div>
+    </footer>
+
+    <!-- LOGIK JAVASCRIPT -->
+    <script>
+        let hargaDasarGlobal = 0;
+        let namaPaketGlobal = "";
+
+        function bukaHalaman(idHalaman) {
+            const semuaHalaman = document.querySelectorAll('.page-content');
+            semuaHalaman.forEach(hal => hal.classList.remove('active'));
+            document.getElementById('page-' + idHalaman).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function bukaModalLogin() {
+            document.getElementById('modalLogin').classList.remove('hidden');
+        }
+        function tutupModalLogin() {
+            document.getElementById('modalLogin').classList.add('hidden');
+        }
+        function simulasiLogin(e) {
+            e.preventDefault();
+            alert("Autentikasi Berhasil! Selamat datang di dashboard TKA MasterClass.");
+            tutupModalLogin();
+        }
+
+        function bukaPembayaran(namaPaket, harga) {
+            namaPaketGlobal = namaPaket;
+            hargaDasarGlobal = harga;
+            document.getElementById('namaPaketModal').innerText = namaPaket;
+            document.getElementById('hargaDasarModal').innerText = "Rp " + harga.toLocaleString('id-ID');
+            document.getElementsByName('diskon')[0].checked = true;
+            document.getElementById('skemaBayar').selectedIndex = 0;
+            
+            hitungTotal();
+            document.getElementById('modalPembayaran').classList.remove('hidden');
+        }
+        function tutupPembayaran() {
+            document.getElementById('modalPembayaran').classList.add('hidden');
+        }
+        function hitungTotal() {
+            let diskon = 0;
+            const rDiskon = document.getElementsByName('diskon');
+            for (let i = 0; i < rDiskon.length; i++) {
+                if (rDiskon[i].checked) { diskon = parseInt(rDiskon[i].value); break; }
+            }
+            let total = hargaDasarGlobal - diskon;
+            document.getElementById('grandTotalModal').innerText = "Rp " + (total < 0 ? 0 : total).toLocaleString('id-ID');
+        }
+        function prosesBayar() {
+            const skema = document.getElementById('skemaBayar').value;
+            const metode = document.querySelector('input[name="metode"]:checked').value;
+            alert(`Pilihan Terkunci!\nPaket: ${namaPaketGlobal}\nSkema / Program: ${skema}\nMetode: ${metode}`);
+            tutupPembayaran();
+        }
+    </script>
+</body>
+</html>
